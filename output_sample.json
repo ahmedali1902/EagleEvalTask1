@@ -1,0 +1,113 @@
+{
+  "columns": {
+    "transaction_id": {
+      "type": "numerical",
+      "description": "Unique identifier for each transaction."
+    },
+    "department": {
+      "type": "categorical",
+      "description": "Department responsible for the transaction.",
+      "frequent_values": [
+        "Sales",
+        "Engineering"
+      ]
+    },
+    "cost_center": {
+      "type": "categorical",
+      "description": "Code representing the cost center associated with the transaction."
+    },
+    "requester": {
+      "type": "text",
+      "description": "Name of the person who requested the transaction."
+    },
+    "approval_status": {
+      "type": "categorical",
+      "description": "Current approval status of the transaction.",
+      "frequent_values": [
+        "Approved",
+        "Pending",
+        "Rejected"
+      ]
+    },
+    "approved_by": {
+      "type": "text",
+      "description": "Name of the person who approved the transaction, if applicable."
+    },
+    "vendor": {
+      "type": "text",
+      "description": "Vendor from whom the item/service was purchased."
+    },
+    "item": {
+      "type": "text",
+      "description": "Description of the item or service purchased."
+    },
+    "category": {
+      "type": "categorical",
+      "description": "Category of the item or service.",
+      "frequent_values": [
+        "Software",
+        "Data",
+        "Event"
+      ]
+    },
+    "cost_usd": {
+      "type": "numerical",
+      "description": "Cost of the transaction in USD."
+    },
+    "currency": {
+      "type": "categorical",
+      "description": "Currency used for the transaction.",
+      "frequent_values": [
+        "USD"
+      ]
+    },
+    "purchase_date": {
+      "type": "date",
+      "description": "Date when the purchase was made."
+    },
+    "delivery_date": {
+      "type": "date",
+      "description": "Expected or actual delivery date of the item/service."
+    },
+    "payment_method": {
+      "type": "categorical",
+      "description": "Method used for payment.",
+      "frequent_values": [
+        "Credit Card",
+        "Wire Transfer"
+      ]
+    },
+    "priority": {
+      "type": "categorical",
+      "description": "Priority level of the transaction.",
+      "frequent_values": [
+        "Medium",
+        "High",
+        "Low"
+      ]
+    },
+    "tags": {
+      "type": "text",
+      "description": "Tags associated with the transaction for categorization or notes."
+    },
+    "notes": {
+      "type": "text",
+      "description": "Additional notes or comments about the transaction."
+    }
+  },
+  "observations": {
+    "approval_status": {
+      "Approved": 3,
+      "Pending": 1,
+      "Rejected": 1
+    },
+    "cost_usd": {
+      "range": "850 to 5000",
+      "average": "Not calculated"
+    },
+    "payment_method": {
+      "Credit Card": 4,
+      "Wire Transfer": 1
+    }
+  }
+}

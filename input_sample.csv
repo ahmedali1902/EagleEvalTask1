@@ -1,0 +1,21 @@
+transaction_id,department,cost_center,requester,approval_status,approved_by,vendor,item,category,cost_usd,currency,purchase_date,delivery_date,payment_method,priority,tags,notes
+1,Sales,CC-SAL-01,Alice Smith,Approved,Manager A,Salesforce,CRM Subscription,Software,1200,USD,2025-04-01,2025-04-02,Credit Card,Medium,"renewal,saas",Annual renewal
+2,Sales,CC-SAL-01,Bob Johnson,Pending,,ZoomInfo,Lead List Purchase,Data,850,USD,2025-04-05,2025-04-07,Credit Card,High,"leads,q2",Targeted leads for Q2
+3,Sales,CC-SAL-02,Carlos Martinez,Approved,Manager B,EventCorp,Trade Show Booth,Event,5000,USD,2025-04-12,2025-04-20,Wire Transfer,High,"event,expo",Booth at DevCon Europe
+4,Sales,CC-SAL-03,Diana Prince,Rejected,Manager A,ConfWorld,Lead Nurture Software,Software,2500,USD,2025-04-22,2025-05-05,Credit Card,Low,martech,Subscription for drip campaigns
+5,Engineering,CC-ENG-01,Evan Lee,Approved,Lead X,JetBrains,IDE Licenses,Software,3000,USD,2025-04-03,2025-04-04,Credit Card,High,devtools,VS Code & IntelliJ licenses
+6,Engineering,CC-ENG-02,Fiona Patel,Approved,Lead Y,AWS,Compute Credits,Cloud,4000,USD,2025-04-10,2025-04-12,Invoice,High,"cloud,test",Credits for load testing
+7,Engineering,CC-ENG-02,George Wong,Pending,,HackerOne,Bug Bounty,Security,800,USD,2025-04-15,2025-04-18,Invoice,Medium,"security,bug",Critical bug bounty cycle
+8,Engineering,CC-ENG-03,Hannah Kim,Approved,Lead Z,GitHub,Private Repo Upgrade,Software,1500,USD,2025-04-18,2025-04-20,Credit Card,Medium,devops,Increase repo storage
+9,HR,CC-HR-01,Isaac Brown,Approved,HR Head,LinkedIn,Recruiting Platform,Software,900,USD,2025-04-02,2025-04-03,Credit Card,High,hiring,Talent acquisition
+10,HR,CC-HR-01,Jane Doe,Pending,HR Head,SwagCo,Onboarding Swag,Merchandise,600,USD,2025-04-08,2025-04-10,Credit Card,Low,swag,Welcome package
+11,HR,CC-HR-02,Kevin Nguyen,Approved,HR Head,Udemy,Leadership Training,Training,1200,USD,2025-04-18,2025-04-22,Credit Card,Medium,training,Leadership coaching
+12,HR,CC-HR-02,Laura Adams,Rejected,HR Head,AgileCo,Cultural Workshop,Training,1500,USD,2025-04-25,2025-05-02,Wire Transfer,Low,culture,Team‑building workshop
+13,Marketing,CC-MKT-01,Michael Clark,Approved,CMO,Meta,Social Media Ads,Advertising,2500,USD,2025-04-04,2025-04-06,Credit Card,High,"ads,social",April push for new product
+14,Marketing,CC-MKT-01,Nina Davis,Approved,CMO,VideoMakers,Product Video,Media,7000,USD,2025-04-11,2025-04-18,Invoice,High,"video,launch",High‑quality launch video
+15,Marketing,CC-MKT-02,Oscar Perez,Pending,CMO,InfluBuddy,Influencer Contract,Advertising,3200,USD,2025-04-20,2025-04-25,Invoice,Medium,influencer,Regional micro‑influencers
+16,Marketing,CC-MKT-03,Priya Singh,Approved,CMO,AdWords,SEO Audit,Consulting,1800,USD,2025-04-28,2025-05-03,Credit Card,Medium,"seo,audit",Site audit for SEO boost
+17,Finance,CC-FIN-01,Quinn Taylor,Approved,CFO,QuickBooks,Accounting Software,Software,2000,USD,2025-04-06,2025-04-08,Invoice,High,finance,Migration to new version
+18,Finance,CC-FIN-01,Rachel Green,Rejected,CFO,Taxify,Tax Filing Service,Professional Service,1800,USD,2025-04-19,2025-04-25,Invoice,Low,compliance,Quarterly tax compliance
+19,IT,CC-IT-01,Steve Rogers,Approved,CTO,Cisco,Firewall Appliance,Hardware,15000,USD,2025-04-09,2025-04-15,Wire Transfer,High,"network,security",Replace outdated firewalls
+20,IT,CC-IT-02,Tina Chen,Pending,CTO,Dell,Laptop Fleet,Hardware,35000,USD,2025-04-30,2025-05-10,Invoice,High,"hardware,refresh",Bulk laptop upgrade

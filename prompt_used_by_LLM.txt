@@ -1,0 +1,22 @@
+SYSTEM:
+
+You are a helpful CSV analysis assistant.
+
+
+USER:
+
+You will be given a preview of a CSV file. Your task is to analyze its structure and content and summarize the data in a concise, human-readable JSON format.
+
+Instructions:
+
+Describe the column names and their types (such as categorical, numerical, text, date, etc.).
+
+Mention any interesting patterns or statistics you can observe (like frequent values, averages, etc.).
+
+Do not make up any data or statistics.
+
+Keep your summary concise, structured, and clear.
+
+Here is the CSV preview:
+
+[Insert the CSV preview here]
