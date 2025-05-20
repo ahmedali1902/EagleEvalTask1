@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSV Summarizer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body,
+        html {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body class="d-flex align-items-center justify-content-center bg-light">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1 class="mb-4">CSV Summarizer</h1>
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <input type="file" class="form-control" name="file" accept=".csv" required>
+                    </div>
+                    <button type="submit" id="submitBtn" class="btn btn-primary w-100">
+                        <span id="submitSpinner" class="spinner-border spinner-border-sm me-2 d-none" role="status"
+                            aria-hidden="true"></span>
+                        <span id="submitText">Upload and Summarize</span>
+                    </button>
+
+                </form>
+                <div id="alertContainer" class="mt-4"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const formData = new FormData(form);
+            const alertContainer = document.getElementById('alertContainer');
+            const submitBtn = document.getElementById('submitBtn');
+            const submitSpinner = document.getElementById('submitSpinner');
+            const submitText = document.getElementById('submitText');
+
+            alertContainer.innerHTML = '';
+            submitBtn.disabled = true;
+            submitSpinner.classList.remove('d-none');
+            submitText.textContent = 'Processing...';
+
+            try {
+                const response = await fetch('/summarize', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.status === 'success') {
+                    const downloadLink = document.createElement('a');
+                    downloadLink.href = `/download/${result.data.filename}`;
+                    downloadLink.className = 'btn btn-success mt-3 w-100';
+                    downloadLink.download = result.data.filename;
+                    downloadLink.textContent = 'Download Summary';
+                    alertContainer.appendChild(downloadLink);
+                } else {
+                    const alert = document.createElement('div');
+                    alert.className = 'alert alert-danger alert-dismissible fade show';
+                    alert.role = 'alert';
+                    alert.innerHTML = `
+                ${result.message} (Error Code: ${result.error_code})
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            `;
+                    alertContainer.appendChild(alert);
+
+                    setTimeout(() => {
+                        const alertInstance = bootstrap.Alert.getOrCreateInstance(alert);
+                        alertInstance.close();
+                    }, 5000);
+                }
+            } catch (error) {
+                const alert = document.createElement('div');
+                alert.className = 'alert alert-danger alert-dismissible fade show';
+                alert.role = 'alert';
+                alert.innerHTML = `
+            An unexpected error occurred. Please try again.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        `;
+                alertContainer.appendChild(alert);
+
+                setTimeout(() => {
+                    const alertInstance = bootstrap.Alert.getOrCreateInstance(alert);
+                    alertInstance.close();
+                }, 5000);
+            } finally {
+                submitBtn.disabled = false;
+                submitSpinner.classList.add('d-none');
+                submitText.textContent = 'Upload and Summarize';
+            }
+        });
+    </script>
+</body>
+
+</html>
